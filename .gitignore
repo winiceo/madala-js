@@ -1,0 +1,14 @@
+# dependencies
+node_modules
+
+# build
+ 
+
+# temporal files
+.DS_Store
+*.tmp
+*.log
+*.idea
+data
+leve
+genv

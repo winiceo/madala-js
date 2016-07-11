@@ -1,0 +1,169 @@
+1..158
+ok 1 Client constructor should set the appVersion
+ok 2 Client appVersion should set the appVersion
+ok 3 DataStore constructor should not require a name to be provided
+ok 4 DataStore constructor should throw an error if name is not a string
+ok 5 DataStore constructor should accept a string for a name
+ok 6 DataStore constructor should set ttl to undefined as the default
+ok 7 DataStore constructor should set useDeltaFetch to false as the default
+ok 8 DataStore constructor should have the cache enabled as the default
+ok 9 DataStore constructor should have the store online as the default
+ok 10 DataStore pathname should return /appdata/<appKey>
+ok 11 DataStore pathname should return /appdata/<appKey>/<collection>
+ok 12 DataStore disableCache() should disable the cache
+ok 13 DataStore disableCache() should not allow the cache to be disabled if the store is offline
+ok 14 DataStore enableCache() should enable the cache
+ok 15 DataStore isCacheEnabled() should return false if the cache is disabled
+ok 16 DataStore isCacheEnabled() should return true if the cache is enabled
+ok 17 DataStore offline() should make the store go offline
+ok 18 DataStore offline() should not the store to go offline if the cache is disabled
+ok 19 DataStore online() should make the store go online
+ok 20 DataStore isOnline() should return a false if the store is offline
+ok 21 DataStore isOnline() should return a true if the store is online
+ok 22 DataStore find() should throw an error if a query is provided that is not an instance of the Query class
+ok 23 DataStore find() should find all the data in a collection
+ok 24 DataStore create() cacheEnabled/online should create a single entity
+ok 25 DataStore create() cacheEnabled/online should create an array of entities
+ok 26 DataStore create() cacheEnabled/offline should create a single entity
+ok 27 DataStore create() cacheEnabled/offline should create an array of entities
+ok 28 DataStore create() cacheDisabled/online should create a single entity
+ok 29 DataStore create() cacheDisabled/online should create an array of entities
+ok 30 DataStore collection() should be a static function
+ok 31 DataStore collection() should return a DataStore that is online and has cache enabled by default
+ok 32 DataStore collection() should return a DataStore that is offline and has cache enabled for DataStoreType.Sync
+ok 33 DataStore collection() should return a DataStore that is online and has cache disabled for DataStoreType.Network
+ok 34 DataStore collection() should accept a name as an argument
+ok 35 CustomEndpoint execute() should respond
+ok 36 CustomEndpoint execute() should throw an error if and endpoint is not provided
+ok 37 CustomEndpoint execute() should throw an error if the endpoint is not a string
+ok 38 CustomEndpoint execute() should return the response from the custom endpoint
+ok 39 CustomEndpoint execute() should send args in request to custom endpoint
+ok 40 Kinvey appVersion should set the appVersion
+ok 41 Kinvey init() should respond
+ok 42 Kinvey init() should return a client
+ok 43 Kinvey ping() should respond
+ok 44 Kinvey ping() should return a response when there is no active user
+ok 45 Kinvey ping() should return a response when there is an active user
+ok 46 Query toQueryString() should have a query property
+ok 47 Query toQueryString() should not have a query property
+ok 48 Query toQueryString() should have a fields property
+ok 49 Query toQueryString() should not have a fields property
+ok 50 Query toQueryString() should have a limit property
+ok 51 Query toQueryString() should not have a limit property
+ok 52 Query toQueryString() should have a skip property
+ok 53 Query toQueryString() should not have a skip property
+ok 54 Query toQueryString() should have a sort property
+ok 55 Query toQueryString() should not have a sort property
+ok 56 Memory should throw an error if no name is provided
+ok 57 Memory should throw an error if name is not a string
+ok 58 Memory should set name with constructor
+ok 59 Memory find() should be a function
+ok 60 Memory find() should return an empty array if a collection does not contain eny entities
+ok 61 Memory find() should return all entities in a collection
+ok 62 Memory findById() should be a function
+ok 63 Memory findById() should throw a NotFoundError for an entity that does not exist
+ok 64 Memory findById() should return the entity when it exists
+ok 65 Memory save() should be a function
+ok 66 Memory save() should save one entity
+ok 67 Memory save() should save an array of entities
+ok 68 Memory isSupported() should be a static function
+ok 69 Memory isSupported() should return true
+ok 70 DB should throw an error if no name is provided
+ok 71 DB should throw an error if name is not a string
+ok 72 DB should allow to specify a single adapter
+ok 73 DB should allow to specify an array of adapters
+ok 74 DB find() should be a function
+ok 75 DB find() should return an empty array if a collection does not contain eny entities
+ok 76 DB find() should return all entities in a collection
+ok 77 DB findById() should be a function
+ok 78 DB findById() should throw a NotFoundError for an entity that does not exist
+ok 79 DB findById() should return the entity when it exists
+ok 80 DB save() should be a function
+ok 81 DB save() should save one entity
+ok 82 DB save() should save an array of entities
+ok 83 KinveyRequest headers should set Content-Type header to application/json; charset=utf-8
+ok 84 KinveyRequest headers should set Content-Type header to application/xml
+ok 85 KinveyRequest headers should set X-Kinvey-Custom-Request-Properties header
+ok 86 KinveyRequest headers should not set X-Kinvey-Custom-Request-Properties header
+ok 87 KinveyRequest headers should set X-Kinvey-Client-App-Version header
+ok 88 KinveyRequest headers should not set X-Kinvey-Client-App-Version header
+ok 89 Sync count should return the count for all entities that need to be synced
+ok 90 Sync count should return the count that matches the query
+ok 91 Sync addCreateOperation should respond
+ok 92 Sync addCreateOperation should reject the promise when a name is not provided
+ok 93 Sync addCreateOperation should reject the promise when an entity does not contain and _id
+ok 94 Sync addCreateOperation should accept a single entity
+ok 95 Sync addCreateOperation should accept an array of entities
+ok 96 Sync addCreateOperation should add entities to the sync table
+ok 97 Sync addDeleteOperation should respond
+ok 98 Sync addDeleteOperation should reject the promise when a name is not provided
+ok 99 Sync addDeleteOperation should reject the promise when an entity does not contain and _id
+ok 100 Sync addDeleteOperation should accept a single entity
+ok 101 Sync addDeleteOperation should accept an array of entities
+ok 102 Sync addDeleteOperation should add entities to the sync table
+ok 103 Sync push should respond
+ok 104 Sync push should save an entity to the network
+ok 105 Sync push should delete an entity from the network
+ok 106 Sync push should not delete an entity on the network if it was created locally
+ok 107 User should create a new user
+ok 108 User should create a new user with data
+ok 109 User _id should be a property
+ok 110 User _acl should be a property
+ok 111 User metadata should be a property
+ok 112 User authtoken should be a property
+ok 113 User username should be a property
+ok 114 User email should be a property
+ok 115 User getActiveUser should be a static method
+ok 116 User getActiveUser should return null when there is not an active user
+ok 117 User getActiveUser should return the active user
+ok 118 User isActive should be a method
+ok 119 User isActive should return false if the user is not the active user
+ok 120 User isActive should return true if the user is the active user
+ok 121 User login() should be a static method
+ok 122 User login() should be a method
+ok 123 User login() should forward to the login instance method
+ok 124 User login() should throw an error if the user is already active
+ok 125 User login() should throw an error if an active user already exists
+ok 126 User login() should throw an error if a username is not provided
+ok 127 User login() should throw an error if the username is an empty string
+ok 128 User login() should throw an error if a password is not provided
+ok 129 User login() should throw an error if the password is an empty string
+ok 130 User login() should login a user
+ok 131 User loginWithMIC should be a static method
+ok 132 User loginWithMIC should be a method
+ok 133 User loginWithMIC should forward to the loginWithMIC instance method
+ok 134 User loginWithMIC should call login on the MobileIdentityConnect module and then connect on the user
+ok 135 User logout should be a method
+ok 136 User logout should logout a user when the user is not the active user
+ok 137 User logout should logout a user when the user is the active user
+ok 138 User logout should logout a user when the REST API rejects the logout request
+ok 139 User isIdentitySupported should be a static method
+ok 140 User connectWithFacebook should be a static method
+ok 141 User connectWithFacebook should call User.connectWithIdentity
+ok 142 User connectWithGoogle should be a static method
+ok 143 User connectWithGoogle should call User.connectWithIdentity
+ok 144 User connectWithLinkedIn should be a static method
+ok 145 User connectWithLinkedIn should call User.connectWithIdentity
+ok 146 User connectWithIdentity should be a static method
+ok 147 User connectWithIdentity should be a method
+ok 148 User connectWithIdentity should forward to the connectWithIdentity instance method
+ok 149 User connectWithIdentity should throw an error if an identity is not provided
+ok 150 User connectWithIdentity should throw an error if an identity is not supported
+ok 151 User connectWithIdentity should throw an error if an identity is not configured in the cloud
+ok 152 Object Utils nested() should return undefined for a non existent property
+ok 153 Object Utils nested() should return the object when a property is not provided and when a default value is not provided
+ok 154 Object Utils nested() should return the default value when a property is not provided
+ok 155 Object Utils nested() should return the default value for a non existent property
+ok 156 Object Utils nested() should return the value for a defined property
+ok 157 Object Utils isDefined() should return false for undefined or null
+ok 158 Object Utils isDefined() should return true for a defined value
+# tests 158
+# pass 158
+# fail 0
+
+=============================== Coverage summary ===============================
+Statements   : 51.46% ( 1180/2293 )
+Branches     : 43.84% ( 747/1704 )
+Functions    : 40.68% ( 107/263 )
+Lines        : 51.66% ( 1150/2226 )
+================================================================================
